@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        head,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="video" style="position: fixed;overflow-y: hidden;overflow-x: hidden;width:100%;height:100%;">
+    </div>
+    <script lang="javascript">
+        var video = document.getElementById('video');
+        var urlParams = new URLSearchParams(window.location.search);
+        var params = urlParams.get('params');
+        video.innerHTML = `
+            <video controls width="100%" height="100%">
+                <source src="https://onedrive.live.com/download?${params}" type='video/mp4'/>
+            </video>`;
+    </script>
+</body>
+
+</html>
